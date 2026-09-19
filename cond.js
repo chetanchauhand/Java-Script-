@@ -11,6 +11,7 @@ rating = 5
 // else if(rating == 4) console.log(" Good ")
 // else console.log("Exellent ")
 
+// num = 90
 num = 900
 
 if(num>=100 && num<= 990)  console.log("Num is  a three digit")
