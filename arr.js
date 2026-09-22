@@ -5,7 +5,14 @@ console.log(arr)
 // console.log(arr[0])
 // console.log(arr[3])
 
-// push element in array
+// push and pop element in array
 
-arr.push(8)
+// arr.push(8)
+// console.log(arr)
+// arr.pop()
+// console.log(arr)
+
+// unshift use 
+arr.unshift(2,3)
+
 console.log(arr)
