@@ -12,7 +12,10 @@ console.log(arr)
 // arr.pop()
 // console.log(arr)
 
-// unshift use 
-arr.unshift(2,3)
+// unshift use for add and shift add for remove
+arr.unshift(2) 
 
+console.log(arr)
+
+arr.shift()
 console.log(arr)
