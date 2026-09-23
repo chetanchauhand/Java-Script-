@@ -9,5 +9,6 @@ let x = {
     marks : 92.5,
     isMarried : false
 }
-console.log(x)
-
+// console.log(x)
+console.log(x['name'])
+console.log(x['age'])
