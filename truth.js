@@ -1,5 +1,5 @@
 // Truth or False value print
-// False valye is -> null,0,NAN,undefined
+// False valye is -> null,0,NaN,undefined
 // truth value is -> Everything accept truthy value
 
 
