@@ -12,3 +12,4 @@ let x = {
 // console.log(x)
 console.log(x['name'])
 console.log(x['age'])
+console.log(x.age)
