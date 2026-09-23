@@ -9,7 +9,8 @@
 // Forof loop in javascript
 
 arr = [12,13,14,15]
-for (const element of arr) {
-    console.log(arr)
+for (const ele of arr) {
+    // console.log(arr)
+    console.log(ele)
     
 }
