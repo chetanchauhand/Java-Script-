@@ -1,14 +1,26 @@
-// let x = document.querySelectorAll(".Yes") // multiple users purpose
-// console.log(x)
+let x = document.getElementById("ele1")
+x.addEventListener("click",function(){
+    x.style.color = "yellow"
+    x.style.backgroundColor = "red"
+})
+x.addEventListener("mouseleave",function(){
+    x.style.color = "Black"
+    x.style.backgroundColor = "white"
+})
 
-let x = document.querySelector("h1")
-x.style.color = "Black"
-setTimeout(function(){
-    x.innerHTML = "Changed"
-},4000)
+let y = document.getElementById("ele2")
+//x.addEventListener("mousemove",function(){
+y.addEventListener("mouseenter",function(){
+    y.style.color = "cream"
+    y.style.backgroundColor = "orange"
+})
+y.addEventListener("mouseleave",function(){
+    y.style.color = "black"
+    y.style.backgroundColor = "white"
+})
+let z = document.getElementById("ele3")
+z.addEventListener("mouseenter",function(){
+    z.style.color = "cream"
+    z.style.backgroundColor = "green"
+})
 
-let y = document.querySelector("h2")
-y.style.background = "red"
-setTimeout(function(){
-    y.innerHTML = "Changed"
-},2000)
