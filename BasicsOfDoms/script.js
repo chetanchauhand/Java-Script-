@@ -22,5 +22,5 @@ let z = document.getElementById("ele3")
 z.addEventListener("mouseenter",function(){
     z.style.color = "cream"
     z.style.backgroundColor = "green"
-})
+});
 
