@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeBreak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">⌘ CODEBREAK</div>
+      <div>LEVEL <b id="level">01</b> · XP <b id="xp">0</b></div>
+    </header>
+
+    <section class="hero">
+      <p>SECURITY SIMULATION // TRAINING MODE</p>
+      <h1>Crack the<br><span>logic vault.</span></h1>
+      <p>
+        Guess the secret three-digit code. Digits are unique.
+        Feedback tells you which digits are correctly placed.
+      </p>
+    </section>
+
+    <section class="terminal">
+      <div class="terminal-head">
+        <span>● ● ●</span>
+        <span>VAULT_ACCESS.exe</span>
+      </div>
+
+      <div id="history">
+        <p class="system">Vault initialized. Enter a 3-digit code.</p>
+      </div>
+
+      <form id="form">
+        <input id="guess" inputmode="numeric" maxlength="3"
+          placeholder="000" required>
+        <button>DECODE ↗</button>
+      </form>
+
+      <p id="feedback">Attempts remaining: <b>8</b></p>
+      <button id="new">New challenge</button>
+    </section>
+
+    <p class="hint">Hint: digits range from 0 to 9, and no digit repeats.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
