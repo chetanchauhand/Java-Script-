@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CricketVerse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <p class="tag">STREET TO STADIUM</p>
+        <h1>🏏 CricketVerse</h1>
+      </div>
+      <span class="live">● LIVE MATCH</span>
+    </header>
+
+    <section class="score">
+      <div>
+        <p id="innings">TOSS TIME</p>
+        <h2 id="runs">0/0</h2>
+        <p id="overs">0.0 overs</p>
+      </div>
+      <div class="target">
+        <span id="target">Choose your toss</span>
+        <strong id="result">Ready to play?</strong>
+      </div>
+    </section>
+
+    <section class="panel" id="setup">
+      <h2>Match setup</h2>
+      <p>Win the toss to choose batting or bowling.</p>
+      <button id="toss">Flip the toss</button>
+      <div id="choice" class="choices hidden">
+        <button data-choice="bat">🏏 Bat first</button>
+        <button data-choice="bowl">🎯 Bowl first</button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="game">
+      <h2 id="prompt">Choose your shot</h2>
+      <div class="shots">
+        <button data-run="0">Defend · 0</button>
+        <button data-run="1">Single · 1</button>
+        <button data-run="2">Two runs · 2</button>
+        <button data-run="3">Three · 3</button>
+        <button data-run="4">FOUR · 4</button>
+        <button data-run="6">SIX · 6</button>
+        <button data-run="W">Risky shot · W</button>
+      </div>
+      <p id="commentary">Good luck!</p>
+      <button id="next" class="hidden">Start second innings</button>
+      <button id="restart">Restart match</button>
+    </section>
+
+    <section class="panel">
+      <h3>Match rules</h3>
+      <p>Each innings has 2 overs. Choose shots and try to score runs before losing all wickets.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
