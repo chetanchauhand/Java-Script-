@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galaxy Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p>INTERACTIVE UNIVERSE</p>
+        <h1>Galaxy Explorer</h1>
+      </div>
+      <button id="toggle">Pause orbit</button>
+    </header>
+
+    <section class="space">
+      <div class="starfield"></div>
+
+      <div class="orbit o1">
+        <button class="planet mercury" data-name="Mercury"
+          data-info="A small rocky planet closest to the Sun."></button>
+      </div>
+
+      <div class="orbit o2">
+        <button class="planet earth" data-name="Earth"
+          data-info="Our home planet, with liquid water on its surface."></button>
+      </div>
+
+      <div class="orbit o3">
+        <button class="planet mars" data-name="Mars"
+          data-info="The red planet, known for its dusty surface and giant volcanoes."></button>
+      </div>
+
+      <div class="sun"></div>
+    </section>
+
+    <section class="info">
+      <p>SELECT A PLANET</p>
+      <h2 id="name">Welcome, explorer</h2>
+      <div id="details">Click a planet to discover it.</div>
+    </section>
+
+    <footer>Illustrative orbital animation · not to scale</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

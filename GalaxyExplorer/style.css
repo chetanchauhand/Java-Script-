@@ -1,0 +1,102 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #050713;
+  color: #f5f5ff;
+  font-family: system-ui;
+}
+
+main { max-width: 950px; margin: auto; padding: 25px; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p, .info p {
+  color: #8e9cff;
+  letter-spacing: 3px;
+  font-size: 11px;
+}
+
+h1 { font-size: clamp(30px, 6vw, 50px); margin: 0; }
+
+header button {
+  background: #252b50;
+  color: white;
+  border: 1px solid #525c91;
+  border-radius: 10px;
+  padding: 11px 15px;
+  cursor: pointer;
+}
+
+.space {
+  height: 440px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse, #111b3c, #050713 70%);
+  border: 1px solid #252d5a;
+  border-radius: 20px;
+  margin-top: 22px;
+}
+
+.sun {
+  width: 60px;
+  height: 60px;
+  background: #ffca72;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ff9b39, 0 0 65px #ff792b;
+  z-index: 2;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid #50598a66;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  animation: spin linear infinite;
+}
+
+.o1 { width: 145px; animation-duration: 9s; }
+.o2 { width: 255px; animation-duration: 16s; }
+.o3 { width: 365px; animation-duration: 24s; }
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mercury { width: 14px; height: 14px; background: #b4b5c6; }
+
+.earth {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(120deg, #55e0ff 0 35%, #3cbb75 36% 65%, #2455c9 66%);
+  box-shadow: 0 0 12px #4ebaff;
+}
+
+.mars { width: 20px; height: 20px; background: #f07855; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.info {
+  background: #11172f;
+  border: 1px solid #303a6d;
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 18px;
+}
+
+.info h2 { margin: 4px 0 10px; }
+footer { color: #737da6; font-size: 12px; margin-top: 14px; }
+.paused .orbit { animation-play-state: paused; }
