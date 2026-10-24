@@ -1,0 +1,109 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #080817;
+  color: #f2f1ff;
+  font-family: system-ui;
+}
+
+main { max-width: 950px; margin: auto; padding: 24px; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+header p { color: #ff5ee8; letter-spacing: 3px; font-size: 11px; }
+h1 { font-size: clamp(30px, 7vw, 58px); margin: 0; text-shadow: 0 0 20px #b45cff; }
+.stats { font-size: 12px; color: #9af8ff; }
+
+.city {
+  height: 430px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #663a9c;
+  border-radius: 18px;
+  margin-top: 22px;
+  background: linear-gradient(#101038, #24215a 65%, #11121d);
+}
+
+.moon {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #c6b9ff;
+  right: 15%;
+  top: 35px;
+  box-shadow: 0 0 45px #8b65ff;
+}
+
+.building {
+  position: absolute;
+  bottom: 85px;
+  background: repeating-linear-gradient(0deg, #24255b 0 20px, #53d8ff 21px 24px);
+  border: 2px solid #5146b7;
+}
+
+.b1 { height: 200px; width: 100px; left: 8%; }
+.b2 {
+  height: 280px; width: 140px; left: 36%;
+  background: repeating-linear-gradient(0deg, #331b55 0 18px, #ff54d8 19px 22px);
+}
+.b3 { height: 230px; width: 120px; right: 8%; }
+
+.road {
+  position: absolute;
+  bottom: 0;
+  height: 85px;
+  width: 100%;
+  background: #10101b;
+  border-top: 3px solid #ff4edb;
+}
+
+.road:after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 38px;
+  border-top: 3px dashed #a9f7ff;
+}
+
+#player, #coin, #mission {
+  position: absolute;
+  font-size: 32px;
+  z-index: 4;
+  transition: left .08s, top .08s;
+}
+
+#player { left: 45%; top: 75%; }
+#coin { left: 70%; top: 62%; }
+#mission { left: 18%; top: 58%; }
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #c5c5e8;
+}
+
+button {
+  background: #bd73ff;
+  color: #130e2b;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#status {
+  color: #7ef8ed;
+  background: #14142e;
+  padding: 14px;
+  border-radius: 10px;
+}
