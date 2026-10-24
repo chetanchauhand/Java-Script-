@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaMind AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="logo">✦ NovaMind</div>
+      <button id="theme">☼ Theme</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL DIGITAL SPACE</p>
+      <h1>Think beyond<br><span>the ordinary.</span></h1>
+      <p>Ask a question, brainstorm an idea, or start something new.</p>
+    </section>
+
+    <div class="chips">
+      <button data-prompt="Give me 5 creative project ideas">Project ideas</button>
+      <button data-prompt="Teach me JavaScript in a simple way">Learn JavaScript</button>
+      <button data-prompt="Help me plan my week">Plan my week</button>
+    </div>
+
+    <section class="chat" id="chat">
+      <div class="bubble bot">Hello! I'm NovaMind. What would you like to explore today?</div>
+    </section>
+
+    <form id="form">
+      <input id="message" placeholder="Message NovaMind..." required>
+      <button>Send ↗</button>
+    </form>
+    <small>Demo assistant — no AI API required.</small>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
