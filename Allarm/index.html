@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090d19">
+    <title>NOVA | Smart Life Alarm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">N</span>
+            <div>NOVA<small>SMART LIFE</small></div>
+        </div>
+
+        <p class="nav-label">WORKSPACE</p>
+        <button class="nav active" data-target="dashboard">◈ Dashboard</button>
+        <button class="nav" data-target="alarms">◷ My Alarms</button>
+        <button class="nav" data-target="weather">☁ Weather & AQI</button>
+        <button class="nav" data-target="music">♫ Music Studio</button>
+
+        <div class="sidebar-bottom">
+            <div class="status-dot"></div>
+            <span>System Online</span>
+            <p>NOVA VERSION 2.0</p>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <p class="overline">PERSONAL CONTROL CENTER</p>
+                <h2>Good day, Explorer.</h2>
+            </div>
+
+            <div class="top-controls">
+                <button id="formatBtn" class="outline-btn">12 H</button>
+                <button id="themeBtn" class="outline-btn">☼ Theme</button>
+                <button id="notifyBtn" class="outline-btn">♧ Alerts</button>
+            </div>
+        </header>
+
+        <!-- CLOCK -->
+        <section class="hero section" id="dashboard">
+            <div class="hero-left">
+                <span class="tag">YOUR TIME. YOUR CONTROL.</span>
+                <div id="clock">00:00:00</div>
+                <div class="date-line">
+                    <span id="ampm">AM</span>
+                    <span id="date">Loading date...</span>
+                </div>
+                <p id="greeting">Make every moment count.</p>
+            </div>
+
+            <div class="clock-art">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit-core">N</div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats">
+            <article class="stat">
+                <span class="stat-icon purple">◷</span>
+                <div><p>Total Alarms</p><h2 id="total">0</h2></div>
+            </article>
+            <article class="stat">
+                <span class="stat-icon green">✓</span>
+                <div><p>Active Alarms</p><h2 id="active">0</h2></div>
+            </article>
+            <article class="stat">
+                <span class="stat-icon orange">⌁</span>
+                <div><p>Next Alarm</p><h2 id="next">--:--</h2></div>
+            </article>
+        </section>
+
+        <div class="dashboard-grid">
+
+            <!-- ALARMS -->
+            <section class="panel section" id="alarms">
+                <div class="panel-head">
+                    <div>
+                        <span class="tag">SCHEDULE</span>
+                        <h2>Alarm Manager</h2>
+                        <p>Organize your daily routine.</p>
+                    </div>
+                    <button class="primary-btn" id="addBtn">+ New Alarm</button>
+                </div>
+
+                <div id="alarmList" class="alarm-list"></div>
+            </section>
+
+            <div class="right-stack">
+
+                <!-- WEATHER -->
+                <section class="panel section" id="weather">
+                    <div class="panel-head">
+                        <div>
+                            <span class="tag">LIVE ENVIRONMENT</span>
+                            <h2>Weather & AQI</h2>
+                        </div>
+                        <span class="weather-symbol" id="weatherIcon">☀</span>
+                    </div>
+
+                    <div class="city-search">
+                        <input id="cityInput" type="text" value="Ludhiana"
+                               placeholder="Enter city name">
+                        <button id="searchCity">Search</button>
+                    </div>
+
+                    <p id="cityName" class="muted">Ludhiana, India</p>
+
+                    <div class="weather-main">
+                        <h1 id="temperature">--°</h1>
+                        <div>
+                            <strong id="weatherText">Loading...</strong>
+                            <small id="humidity">Humidity --%</small>
+                        </div>
+                    </div>
+
+                    <div class="aqi-box">
+                        <div class="aqi-heading">
+                            <div>
+                                <small>AIR QUALITY INDEX</small>
+                                <h2 id="aqi">--</h2>
+                            </div>
+                            <span id="aqiStatus">Loading</span>
+                        </div>
+
+                        <div class="aqi-track">
+                            <div id="aqiBar"></div>
+                        </div>
+
+                        <div class="pollutants">
+                            <div><small>PM2.5</small><strong id="pm25">--</strong></div>
+                            <div><small>PM10</small><strong id="pm10">--</strong></div>
+                        </div>
+                    </div>
+
+                    <button class="text-btn" id="refreshWeather">
+                        Refresh live data ↻
+                    </button>
+                    <p class="api-note" id="apiStatus">Weather service ready</p>
+                </section>
+
+                <!-- MUSIC -->
+                <section class="panel section" id="music">
+                    <div class="panel-head">
+                        <div>
+                            <span class="tag">AUDIO CENTER</span>
+                            <h2>Music Studio</h2>
+                        </div>
+                        <span class="music-note">♫</span>
+                    </div>
+
+                    <div class="album-art">
+                        <div class="album-circle">♫</div>
+                        <div class="equalizer">
+                            <i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                    </div>
+
+                    <h3 id="songTitle">No song selected</h3>
+                    <p class="muted" id="songArtist">Add your music collection</p>
+
+                    <input type="file" id="songInput" accept="audio/*" multiple hidden>
+                    <button class="secondary-btn full" id="uploadBtn">
+                        + Add Music Files
+                    </button>
+
+                    <div class="player-controls">
+                        <button id="prevSong">|◀</button>
+                        <button id="playSong" class="play-btn">▶</button>
+                        <button id="nextSong">▶|</button>
+                    </div>
+
+                    <div class="progress-row">
+                        <span id="currentTime">0:00</span>
+                        <input type="range" id="seekBar" min="0" max="100" value="0">
+                        <span id="duration">0:00</span>
+                    </div>
+
+                    <div class="volume-row">
+                        <span>VOL</span>
+                        <input type="range" id="volume" min="0" max="100" value="70">
+                    </div>
+
+                    <div id="playlist" class="playlist">
+                        <p class="muted">Your playlist is empty.</p>
+                    </div>
+
+                    <audio id="audioPlayer"></audio>
+                </section>
+
+            </div>
+        </div>
+
+        <footer>NOVA SMART LIFE © 2026 · Designed for a better tomorrow</footer>
+    </main>
+</div>
+
+<!-- ALARM MODAL -->
+
+<div class="overlay" id="alarmModal">
+    <div class="modal">
+        <div class="modal-head">
+            <div>
+                <span class="tag">ALARM SETTINGS</span>
+                <h2 id="modalTitle">Create Alarm</h2>
+            </div>
+            <button id="closeModal" class="close-btn">×</button>
+        </div>
+
+        <label>Time</label>
+        <input type="time" id="alarmTime" value="07:00">
+
+        <label>Alarm Title</label>
+        <input type="text" id="alarmName" placeholder="Morning Workout">
+
+        <label>Repeat Days</label>
+        <div class="days" id="days">
+            <button data-day="1">M</button>
+            <button data-day="2">T</button>
+            <button data-day="3">W</button>
+            <button data-day="4">T</button>
+            <button data-day="5">F</button>
+            <button data-day="6">S</button>
+            <button data-day="0">S</button>
+        </div>
+
+        <label>Alarm Sound</label>
+        <select id="soundType">
+            <option value="classic">Classic Bell</option>
+            <option value="digital">Digital Pulse</option>
+            <option value="gentle">Gentle Chime</option>
+            <option value="music">Selected Music</option>
+        </select>
+
+        <label>Stop after</label>
+        <select id="snoozeDuration">
+            <option value="5">Snooze 5 minutes</option>
+            <option value="10">Snooze 10 minutes</option>
+            <option value="15">Snooze 15 minutes</option>
+        </select>
+
+        <div class="modal-actions">
+            <button id="cancelModal" class="secondary-btn">Cancel</button>
+            <button id="saveAlarm" class="primary-btn">Save Alarm</button>
+        </div>
+    </div>
+</div>
+
+<!-- RINGING SCREEN -->
+
+<div class="overlay ring-overlay" id="ringOverlay">
+    <div class="ring-card">
+        <div class="ring-icon">◷</div>
+        <span class="tag">WAKE UP SYSTEM ACTIVATED</span>
+        <h1 id="ringTime">07:00</h1>
+        <h2 id="ringName">Morning Alarm</h2>
+        <p>Your new day starts now.</p>
+
+        <div class="ring-actions">
+            <button id="snoozeBtn" class="secondary-btn">Snooze</button>
+            <button id="stopBtn" class="primary-btn">Stop Alarm</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
